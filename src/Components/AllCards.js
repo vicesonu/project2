@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import EachCard from './EachCard';
+
+
 
 function AllCards(props) {
         const [cardsList, setCardsList] = useState(null);
@@ -11,7 +12,7 @@ function AllCards(props) {
       .then((data) => {
         setCardsList(data.results);
          setPickedCards(data)
-         console.log(data)
+         console.log(data.cards[0].images)
 
   });
  }, []);  
@@ -34,7 +35,8 @@ function AllCards(props) {
         <div className='AllCards'>
     <h1>World of Cards</h1>
     {cardsListHtml}
-    <EachCard name={pickedCards} addCardToDeck={props.addCardToDeck}/>
+    {/* <CardGameBoard /> */}
+    {/* <EachCard name={pickedCards} addCardToDeck={props.addCardToDeck}/> */}
     </div>
     );
 }
