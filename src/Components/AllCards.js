@@ -1,40 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
 
-
-function AllCards(props) {
-        const [cardsList, setCardsList] = useState(null);
+function AllCards() {
+        const [cardsList, setCardsList] = useState([]);
         const [pickedCards, setPickedCards] = useState('')
     
     useEffect(()=> {
       fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=2`)
       .then((res) => res.json())
       .then((data) => {
-        setCardsList(data.results);
-         setPickedCards(data)
-         console.log(data.cards[0].images)
-
+        setCardsList(data.cards);
+        setPickedCards(data)
+         console.log(data.cards)
   });
  }, []);  
-
- const handleCardClick = (name) => {
-    setPickedCards(name);
-  }
-  let cardsListHtml
- if (cardsList != null){
-    cardsListHtml = cardsList.map((card) => {
-        return <p onClick={() => {handleCardClick(card.name)}}>{card.name}</p>;
-       }); 
- }
-
-//   const cardsListHtml = cardsList.map((card) => {
-//         return <p onClick={() => {handleCardClick(card.name)}}>{card.name}</p>;
-//        });
-    
+ const displayCards = cardsList.map((card ) => <img src={card.image} />)
+ 
     return (
         <div className='AllCards'>
     <h1>World of Cards</h1>
-    {cardsListHtml}
+    {displayCards}
     {/* <CardGameBoard /> */}
     {/* <EachCard name={pickedCards} addCardToDeck={props.addCardToDeck}/> */}
     </div>
