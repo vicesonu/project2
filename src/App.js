@@ -4,6 +4,7 @@ import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import AllCards from './Components/AllCards';
 import CardBody from './Components/CardBody';
 import { useState } from "react"
+import EachCard from './Components/EachCard';
 
 function App() {
   const [bunchOfCards, setBunchOfCards] = useState([]);
