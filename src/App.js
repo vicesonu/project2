@@ -3,8 +3,28 @@ import './App.css';
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import AllCards from './Components/AllCards';
 import CardBody from './Components/CardBody';
+import { useState } from "react"
 
 function App() {
+  const [bunchOfCards, setBunchOfCards] = useState([]);
+
+  const addCards = (card) => {
+    console.log(card);
+
+    setBunchOfCards([...bunchOfCards, card]);
+     };
+
+     const removeCardFromDeck = (indexToRemove) => {
+        console.log(indexToRemove);
+    
+        let newCard = bunchOfCards.filter((rank, index) => {
+             return index !== indexToRemove
+    })
+    setBunchOfCards(newCard)
+
+  }
+
+  console.log(bunchOfCards);
   return (
     <div className="App">
       <nav>
