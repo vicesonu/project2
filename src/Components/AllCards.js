@@ -7,7 +7,8 @@ function AllCards() {
         const [pickedCards, setPickedCards] = useState('')
 
         const [guess, setGuess] = useState();
-        
+        const [message, setMessage] = useState('')
+
         // code block
     //     const updateCardList = (event) => { 
     //          setCardsList(event.target.value)
@@ -20,15 +21,15 @@ function AllCards() {
         getCards();
         //  setCardsList((cardsList) => cardsList.slice(0,cardsList.length -1));
         setPickedCards((pickedCards) => [...pickedCards,cardsList[cardsList.length -1]]);
-      let message = ""
+      
         if (pickedCards < cardsList) {
-        message = "you lose";
-    }else {
-      message = "you win";
+        setMessage("you lose");
+    }else if (pickedCards > cardsList) {
+      setMessage("you win");
      
     }
     console.log(cardsList)
-    console.log(message)
+    
     
         setPickedCards((pickedCards) => [...pickedCards,cardsList[cardsList.length -1]]);
     }; 
@@ -60,10 +61,12 @@ function AllCards() {
         <div className='player-name'> 
         <p class= "player1"> USER</p>
         <p class= "player2"> COMPUTER</p>
+
            </div>
       </form>
      
     {displayCards}
+    <p>message:{message}</p>
     
 
     </div>

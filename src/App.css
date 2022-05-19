@@ -14,10 +14,13 @@
   font-weight: bold;
   color: blue;
   transition: 0.4s ease-in-out;
+  
 }
 .Top {
   display: flex;
   justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
 }
 
 .player1 {
@@ -33,4 +36,9 @@
   margin-left: 50px;
 
 }
-
+ nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(165, 81, 42);
+ }
