@@ -7,7 +7,7 @@ function AllCards() {
         const [pickedCards, setPickedCards] = useState('')
 
         const [guess, setGuess] = useState("lower");
-
+        
         // code block
     //     const updateCardList = (event) => { 
     //          setCardsList(event.target.value)
@@ -17,38 +17,42 @@ function AllCards() {
     // }
     const updateCardList = (e) => {
         e.preventDefault();
-        setCardsList((cardsList) => cardsList.slice(0,cardsList.length -1));
+        getCards();
+        //  setCardsList((cardsList) => cardsList.slice(0,cardsList.length -1));
+        setPickedCards((pickedCards) => [...pickedCards,cardsList[cardsList.length -1]]);
+      if (pickedCards < cardsList) {
+        console.log("low")
+    }else {
+        console.log(cardsList)
+    }
         setPickedCards((pickedCards) => [...pickedCards,cardsList[cardsList.length -1]]);
     }; 
+    const getCards = () => {
+        fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=2`)
+        .then((res) => res.json())
+        .then(data => setCardsList(data.cards))
+        .catch(error => console.log(cardsList));
+    }
 
     useEffect(()=> {
-      fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=2`)
-      .then((res) => res.json())
-      .then((data) => {   
-        setCardsList(data.cards);
-      if (pickedCards < cardsList) {
-          console.log("low")
-      }else {
-          console.log(data.cards)
-      }
+      getCards();
       
-        //remember this code
-        // setPickedCards(data)
-        //  console.log(data.cards)
-  });
  }, []);  
+
  const displayCards = cardsList.map((card ) => <img src={card.image} />)
  
     return (
         <div className='AllCards'>
-    <h1>World of Cards</h1>
-    <form onSubmit={cardsList}>
+    <h1 style={{color: "green"}}>World of Cards !</h1>
+    <form onSubmit={updateCardList}>
         <select value={guess} onChange={(e) => setGuess(e.target.value)}>
           <option>lower</option>
           <option>higher</option>
         </select>
         <button type="submit">guess</button>
+        <div> YOU Computer </div>
       </form>
+     
     {displayCards}
     
     </div>

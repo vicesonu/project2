@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <nav>
-   <Link to="/">Card Sorter
+   <Link to="/">Game
     </Link>
    <Link to="/CardBody">Card Body
    </Link>
