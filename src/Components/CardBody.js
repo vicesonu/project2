@@ -2,33 +2,40 @@ import React from "react";
 import { ReactDOM } from "react";
 
 
-
-
 function CardBody() {
-    let rnd = Math.round(Math.random() * 52);
-    if(this.state.CardsDeck[rnd] != 0){
-      this.state.CardsDeck[rnd] = 0;
-      return rnd;
-    }
+  //   let rnd = Math.round(Math.random() * 52);
+  //   if(this.state.CardsDeck[rnd] != 0){
+  //     this.state.CardsDeck[rnd] = 0;
+  //     return rnd;
+  //   }
 
-    // To get a Card
-    for(let count = rnd + 1; count < 52; count ++){
-      if(this.state.CardsDeck[count] != 0){
-        this.state.CardsDeck[count] = 0;
-        return count;
-      }
-    }
-    // next card
-    for(let count = rnd - 1; count >= 0; count --){
-      if(this.state.CardsDeck[count] != 0){
-        this.state.CardsDeck[count] = 0;
-        return count;
-      }
-    }
-    // no cards in deck!
-    return - 1;
+  //   // To get a Card
+  //   for(let count = rnd + 1; count < 52; count ++){
+  //     if(this.state.CardsDeck[count] != 0){
+  //       this.state.CardsDeck[count] = 0;
+  //       return count;
+  //     }
+  //   }
+  //   // next card
+  //   for(let count = rnd - 1; count >= 0; count --){
+  //     if(this.state.CardsDeck[count] != 0){
+  //       this.state.CardsDeck[count] = 0;
+  //       return count;
+  //     }
+  //   }
+  //   // no cards in deck!
+  //   return - 1;
+  // }
+
+  return (
+    <div>
+  <h3>Wanna play more games ?</h3>
+  <a
+   href='https://cardgames.io/'>
+    Links </a>
+    </div>
+  )
   }
-
   export default CardBody;
 
 

@@ -1,6 +1,36 @@
 .App {
   text-align: center;
-  background-color: blue;
+  background-color: rgb(0, 255, 166);
   height: 100vh;
+}
+.player-name{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+.links {
+  text-decoration: none;
+  font-weight: bold;
+  color: blue;
+  transition: 0.4s ease-in-out;
+}
+.Top {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.player1 {
+  color: black;
+  margin-right: 120px;
+  font-weight: bold;
+ 
+}
+
+
+.player2 {
+  color: black;
+  margin-left: 50px;
+
 }
 

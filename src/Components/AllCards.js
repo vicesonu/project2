@@ -6,7 +6,7 @@ function AllCards() {
         const [cardsList, setCardsList] = useState([]);
         const [pickedCards, setPickedCards] = useState('')
 
-        const [guess, setGuess] = useState("lower");
+        const [guess, setGuess] = useState();
         
         // code block
     //     const updateCardList = (event) => { 
@@ -20,13 +20,20 @@ function AllCards() {
         getCards();
         //  setCardsList((cardsList) => cardsList.slice(0,cardsList.length -1));
         setPickedCards((pickedCards) => [...pickedCards,cardsList[cardsList.length -1]]);
-      if (pickedCards < cardsList) {
-        console.log("low")
+      let message = ""
+        if (pickedCards < cardsList) {
+        message = "you lose";
     }else {
-        console.log(cardsList)
+      message = "you win";
+     
     }
+    console.log(cardsList)
+    console.log(message)
+    
         setPickedCards((pickedCards) => [...pickedCards,cardsList[cardsList.length -1]]);
     }; 
+
+
     const getCards = () => {
         fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=2`)
         .then((res) => res.json())
@@ -43,18 +50,22 @@ function AllCards() {
  
     return (
         <div className='AllCards'>
-    <h1 style={{color: "green"}}>World of Cards !</h1>
+    <h1 style={{color: "Black"}}>World of Cards !</h1>
     <form onSubmit={updateCardList}>
         <select value={guess} onChange={(e) => setGuess(e.target.value)}>
           <option>lower</option>
           <option>higher</option>
         </select>
         <button type="submit">guess</button>
-        <div> YOU Computer </div>
+        <div className='player-name'> 
+        <p class= "player1"> USER</p>
+        <p class= "player2"> COMPUTER</p>
+           </div>
       </form>
      
     {displayCards}
     
+
     </div>
     );
 }
