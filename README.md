@@ -1,3 +1,16 @@
+# About the Code
+The cards api runs from deckofcardsapi.com. The idea is to create a shuffled deck and draw cards from the deck in the same request. The game is a one user console (player and computer) and has a higher and lower guesses in terms of random selection. If a player has a higher card than the computer the player wins. In summary the game is more of a probability of who gets the higher number. When an individual clicks on the guess button it reshuffles the deck.
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -30,7 +30,6 @@
  
 }
 
-
 .player2 {
   color: black;
   margin-left: 50px;
@@ -41,4 +40,5 @@
   flex-direction: row;
   justify-content: space-around;
   background-color: rgb(165, 81, 42);
+
  }
