@@ -23,9 +23,9 @@ function AllCards() {
         setPickedCards((pickedCards) => [...pickedCards,cardsList[cardsList.length -1]]);
       
         if (pickedCards < cardsList) {
-        setMessage("you lose");
+        setMessage("YOU LOSE");
     }else if (pickedCards > cardsList) {
-      setMessage("you win");
+      setMessage("YOU WIN");
      
     }
     console.log(cardsList)
@@ -70,6 +70,7 @@ function AllCards() {
     
 
     </div>
+   
     );
 }
 export default AllCards;

@@ -12,8 +12,10 @@
 .links {
   text-decoration: none;
   font-weight: bold;
-  color: blue;
-  transition: 0.4s ease-in-out;
+  color: white;
+  padding-top: 1.7%;
+  font-size: 20px;
+  
   
 }
 .Top {
@@ -35,10 +37,15 @@
   margin-left: 50px;
 
 }
+.message {
+  color: black;
+  margin-right: 120px;
+  font-weight: bold;
+}
  nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: rgb(165, 81, 42);
-
+  height: 7%;
  }
