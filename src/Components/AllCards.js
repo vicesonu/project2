@@ -51,7 +51,7 @@ function AllCards() {
  
     return (
         <div className='AllCards'>
-    <h1 style={{color: "Black"}}>World of Cards !</h1>
+    <h1 style={{color: "Red"}}>World of Cards !</h1>
     <form onSubmit={updateCardList}>
         <select value={guess} onChange={(e) => setGuess(e.target.value)}>
           <option>lower</option>
@@ -66,7 +66,7 @@ function AllCards() {
       </form>
      
     {displayCards}
-    <p>message:{message}</p>
+    <p className='display'>message:{message}</p>
     
 
     </div>

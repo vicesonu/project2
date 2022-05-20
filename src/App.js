@@ -34,6 +34,7 @@ function App() {
       <nav className='Top'>
    <Link className="links"to="/">Game
     </Link>
+
    <Link className="links"to="/CardBody">Card Body
    </Link>
    <Link className="links"to="/About">About
