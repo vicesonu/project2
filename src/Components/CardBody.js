@@ -29,8 +29,8 @@ function CardBody() {
 
   return (
     <div>
-      <h3 style={{color: "White"}}>Wanna play more games ?</h3>
-  <a className="display"
+     <h4 className="display1"style={{color: "Red"}}>Wanna play more games!</h4>
+      <a className="display"
    href='https://cardgames.io/'>
     Links </a>
     </div>
