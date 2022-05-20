@@ -9,6 +9,7 @@ function About() {
        href='https://www.thesportsgeek.com/blog/if-youve-never-played-card-game-before/'>
         Links </a>
         </div>
+        
       )
       }
       export default About;
